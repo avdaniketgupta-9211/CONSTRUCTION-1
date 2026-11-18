@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { db } from "@/db";
+import { getDb } from "@/db";
 import { leads } from "@/db/schema";
 
 export const dynamic = "force-dynamic";
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
   const userAgent = request.headers.get("user-agent")?.slice(0, 400) ?? null;
 
   try {
-    await db.insert(leads).values({
+    await getDb().insert(leads).values({
       name: values.name,
       phone: values.phone,
       email: values.email,

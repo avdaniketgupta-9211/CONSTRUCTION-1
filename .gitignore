@@ -32,3 +32,6 @@ AGENTS.md
 # LOCAL-PREVIEW.md
 # Local Netlify folder
 .netlify
+
+# local Vercel project config
+.vercel
